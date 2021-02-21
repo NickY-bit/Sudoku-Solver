@@ -1,5 +1,0 @@
-com/example/sudokusolver/BuildConfig.java
- com.example.sudokusolver.BuildConfig
-com/example/sudokusolver/MainActivity.java
- com.example.sudokusolver.MainActivity
- com.example.sudokusolver.MainActivity$1
