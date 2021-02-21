@@ -27,13 +27,35 @@ public class MainActivity extends AppCompatActivity {
 
         Button butSolve = findViewById(R.id.buttonSolve);
         butSolve.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                //x = row, y = column, z = square
-                //[0][0][0] is the top left most number
+                solvePuzzle();
+            }
+        });
+
+        Button butRes = findViewById(R.id.buttonRefresh);
+        butRes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 int x = 0;
                 int y = 0;
                 int z = 0;
-                solvePuzzle();
+                while (z < 9) {
+
+                    String textObjId =  "editTextNumber" + x + y + z;
+                    EditText textObj = findViewById(getResources().getIdentifier(textObjId, "id", getPackageName()));
+                    textObj.setText("");
+
+                    x++;
+                    if (x > 2) {
+                        x = 0;
+                        y++;
+                        if (y > 2) {
+                            y = 0;
+                            z++;
+                        }
+                    }
+                }
             }
         });
 
@@ -159,9 +181,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-            // x & y should already be 0
             z = 0;
-            //loop through ans and find numbers that only have one possible position in each square
+            //UNFINISHED loop through ans and find numbers that only have one possible position in each square/row/column
             /*while (z < 9) {
 
 
